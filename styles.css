@@ -17,6 +17,7 @@ body {
   z-index: 1000;
   background-color: #143F66;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 70px; /* Define the height explicitly */
 }
 
 .navbar {
@@ -185,35 +186,13 @@ body {
   #nav-menu.active a:last-child {
     padding-bottom: 1em;
   }
-
-  #nav-menu.active::after {
-    content: "Copyright © 2025 KVA";
-    padding: 1.5em;
-    color: #45C3E5;
-    cursor: pointer;
-  }
-
-  #nav-menu.active::after:hover {
-    color: #45C3E5;
-  }
-}
-
-/* Positioning the copyright text below the last nav item */
-#nav-menu.active::after {
-  content: "Copyright © 2025 KVA";
-  position: relative; /* Position it relative to the last nav item */
-  margin-top: 2em; /* Space between the last nav item and copyright text */
-  color: #45C3E5;
-  text-align: center;
-  padding: 1em;
-  cursor: pointer;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: calc(105vh - 70px); /* Adjusted height */
-  background-image: url('https://res.cloudinary.com/reinmaxdesign/image/upload/v1742024505/KVA-students_am5won.jpg');
+  height: calc(100vh - 70px); /* Adjusted height */
+  background-image: url('https://res.cloudinary.com/reinmaxdesign/image/upload/v1742024505/KVA-pupils.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -222,7 +201,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: -60px; /* Adjust margin to connect with footer */
+  margin-top: 70px; /* Offset for the fixed header */
 }
 
 /* Optional: Add a fallback for older browsers */
@@ -234,7 +213,7 @@ body {
 
 /* Overlay Styles */
 .overlay {
-  background-color: rgba(20, 63, 102, 0.85);
+  background-color: rgba(20, 63, 102, 0.85); /* Increased opacity for better visibility */
   color: white;
   width: 100%;
   height: 100%;
