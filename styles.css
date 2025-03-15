@@ -1,0 +1,306 @@
+/* Base Styles */
+body {
+  font-family: 'BR Firma', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #143F66;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.login-icon {
+  height: 20px;
+  cursor: pointer;
+}
+
+.login-icon:hover {
+  color: #45C3E5;
+}
+
+.login-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #143F66;
+  padding: 0.5em;
+  border-radius: 1px;
+}
+
+.login-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-dropdown li {
+  margin-bottom: 0.5em;
+}
+
+.login-dropdown a {
+  display: block;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-dropdown a:hover {
+  color: #45C3E5;
+}
+
+.login-dropdown.show {
+  display: block;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 0.75em;
+  transition: color 0.3s;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-links a:hover {
+  color: #45C3E5;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 1100; /* Always on top */
+  margin-left: auto;
+}
+
+.hamburger span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Initially hide the element for larger screens */
+.hidden-desktop {
+  display: none;
+}
+
+/* Make it visible only on screens less than 900px */
+@media (max-width: 900px) {
+  .hidden-desktop {
+    display: block; /* Or 'flex' if you prefer a flex layout */
+  }
+
+  /* Hide links on mobile and show mobile menu */
+  .nav-links {
+    display: none; /* Hide links on mobile */
+  }
+
+  #nav-menu {
+    flex-direction: column;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #143F66;
+    padding: 2em 0;
+    gap: 1.5em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: top 0.5s ease;
+  }
+
+  #nav-menu.active {
+    top: 70px; /* Slightly below the header */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .login-section {
+    display: none;
+  }
+
+  #nav-menu.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-menu.active a {
+    padding: 1.5em;
+  }
+
+  #nav-menu.active a:last-child {
+    padding-bottom: 1em;
+  }
+
+  #nav-menu.active::after {
+    content: "Copyright © 2025 KVA";
+    padding: 1.5em;
+    color: #45C3E5;
+    cursor: pointer;
+  }
+
+  #nav-menu.active::after:hover {
+    color: #45C3E5;
+  }
+}
+
+/* Positioning the copyright text below the last nav item */
+#nav-menu.active::after {
+  content: "Copyright © 2025 KVA";
+  position: relative; /* Position it relative to the last nav item */
+  margin-top: 2em; /* Space between the last nav item and copyright text */
+  color: #45C3E5;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: calc(105vh - 70px); /* Adjusted height */
+  background-image: url('https://res.cloudinary.com/reinmaxdesign/image/upload/v1742024505/KVA-students_am5won.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ensures the background sticks and does not move */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -60px; /* Adjust margin to connect with footer */
+}
+
+/* Optional: Add a fallback for older browsers */
+.hero {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Overlay Styles */
+.overlay {
+  background-color: rgba(20, 63, 102, 0.85);
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.overlay h1 {
+  font-size: clamp(2em, 5vw, 3em);
+  margin-bottom: 0.5em;
+}
+
+.overlay p {
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  margin-bottom: 1.5em;
+  color: #45C3E5;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0; /* Remove margin bottom */
+}
+
+.cta {
+  background-color: #45C3E5;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1em;
+  border: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.cta:hover {
+  color: #143F66;
+  background-color: white;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.social-link {
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  transition: .3s color ease-in-out; /* Smooth transition for hover */
+}
+
+.social-link:hover {
+  color: #45C3E5; /* Hover color for social links */
+  text-decoration: wavy;
+}
+
+footer {
+  position: absolute; /* Use absolute positioning */
+  bottom: 0; /* Keep at the bottom */
+  width: 100%; /* Full width */
+  background-color: #143F66; /* Ensure background color */
+  padding: 1em 0;
+}

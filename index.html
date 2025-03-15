@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kato Victoria Academy - A leading educational institution">
+  <meta name="keywords" content="Kato Victoria Academy, Education, School">
+  <title>Kato Victoria Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="assets/kva-logo.png" alt="Kato Victoria Academy Logo"></a>
+      </div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="https://matokeo.necta.go.tz/results/2024/sfna/SFNA2024/ps0302160.htm">Exam Results</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="tel:+255658322207">Contact</a></li>
+        <li><a class="hidden-desktop" href="login.html">Login</a></li>
+      </ul>
+      <div class="login-section">
+        <img src="assets/user.svg" alt="Login Icon" class="login-icon" id="login-icon">
+        <div class="login-dropdown" id="login-dropdown">
+          <ul>
+            <li><a href="manager-login.html">Manager</a></li>
+            <li><a href="staff-login.html">Staff</a></li>
+            <li><a href="parent-login.html">Parent</a></li>
+            <li><a href="IT-login.html">Admin IT</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay">
+      <h1 class="hero-title">Kato Victoria Academy</h1>
+      <p>Learning for a brighter tomorrow</p>
+      <div class="cta-buttons">
+        <a href="about.html" class="cta">Our School</a>
+        <a href="admission.html" class="cta">Apply Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="social-links">
+      <span><a href="https://instagram.com/katovictoria_academy/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a></span> |
+      <span><a href="https://facebook.com/katovictoriaacademy/" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a></span> |
+      <span><a href="https://x.com/katovictoriaacademy/" target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a></span> |
+      <span><a href="https://www.youtube.com/@KatoVictoriaAcademy/" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a></span>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Menu Toggle and Login Dropdown -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
+    const loginIcon = document.getElementById('login-icon');
+    const loginDropdown = document.getElementById('login-dropdown');
+
+    // Open/close menu on hamburger click
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('toggle');
+    });
+
+    // Close menu when clicking outside
+    body.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('toggle');
+      }
+    });
+
+    // Toggle login dropdown
+    loginIcon.addEventListener('click', () => {
+      loginDropdown.classList.toggle('show');
+    });
+
+    // Close login dropdown when clicking outside
+    body.addEventListener('click', (e) => {
+      if (!loginIcon.contains(e.target) && !loginDropdown.contains(e.target)) {
+        loginDropdown.classList.remove('show');
+      }
+    });
+  </script>  
+</body>
+</html>
