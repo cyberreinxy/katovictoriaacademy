@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Page</title>
+
+    <!-- Link to Faktum Test font from CDN -->
+    <link href="https://fonts.cdnfonts.com/css/faktum-test" rel="stylesheet">
+
+    <style>
+        /* Ensure the body and html take up the full height and prevent scrolling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: 'Faktum Test', sans-serif; /* Apply Faktum Test font */
+            user-select: none; /* Prevent text highlighting */
+
+        }
+
+        /* Maintain full height for the maintenance page */
+        .maintenance-page {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Take full height */
+        }
+
+        /* Background Image settings */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image fully covers the viewport */
+            z-index: -1; /* Place image behind the content */
+        }
+
+        /* Overlay settings to darken the background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 63, 102, 0.85); /* Dark blue overlay */
+            color: white; /* Text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2em;
+            box-sizing: border-box; /* Prevents content from spilling out */
+        }
+
+        /* Content settings */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: white; /* White text */
+        }
+
+        .content p {
+            font-size: 1em;
+            margin-bottom: 1em;
+            color: white; /* White text */
+        }
+
+        /* Remove underlines from links */
+        .content a {
+            color: #45C3E5; /* Light blue links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .content a:hover {
+            color: white; /* Hover effect */
+        }
+
+        .home-link {
+            text-decoration: none; /* Remove underline */
+            color: #45C3E5; /* Light blue */
+        }
+
+        .home-link:hover {
+            color: white; /* Hover effect */
+        }
+
+        /* Gear animation settings */
+        .gear-container img {
+            width: 70px;
+            height: 70px;
+            animation: rotateGear 10s linear infinite; /* Slower rotation */
+        }
+
+        @keyframes rotateGear {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .overlay {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-page">
+        <!-- Image element with object-fit cover for background image -->
+        <img src="https://res.cloudinary.com/reinmaxdesign/image/upload/v1742024505/KVA-pupils.jpg" alt="Background Image" class="background-image">
+
+        <div class="overlay">
+            <div class="content">
+                <!-- Replace GIF with the gear.svg -->
+                <div class="gear-container">
+                    <img src="assets/gear.svg" alt="Rotating Gear" width="80" height="80">
+                </div>
+                <h1>This page is currently being updated.</h1>
+                <p>For any urgent inquiries or assistance related <br> to this page, please contact our developer.</p>
+                <p><a href="https://wa.me/message/O3LM6XGRY6O5L1">Contact the developer</a></p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><a href="https://cyberreinxy.github.io/katovictoriaacademy/index.html" class="home-link">Back to Homepage</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Prevent right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault(); // Disable right-click context menu
+      });
+
+      // Prevent left-click (mousedown and mouseup)
+      document.addEventListener('mousedown', function(e) {
+          e.preventDefault(); // Disable left-click
+      });
+
+      document.addEventListener('mouseup', function(e) {
+          e.preventDefault(); // Disable left-click
+      });
+  </script>
+
+</body>
+</html>
